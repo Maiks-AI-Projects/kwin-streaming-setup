@@ -6,6 +6,19 @@ Status: work in progress. The desktop is still being built. No runtime
 stability, OBS capture performance, or per-output GPU assignment is verified.
 Do not treat this repository as a ready-to-run installer.
 
+AI maintenance disclosure
+-------------------------
+I know some people dislike AI-maintained code. I need this working yesterday,
+so here we are.
+
+Full disclosure: AI tools maintain this fork and its setup scripts. I don't
+personally read or review the code. I test the resulting setup on my own
+hardware, but that does not replace human code review.
+
+Most of the code comes from KDE and the original experimental branch. Their
+authors deserve credit for that work. This project is experimental, and
+successful builds should not be taken as proof of stability.
+
 Upstream work
 -------------
 KWin: https://invent.kde.org/plasma/kwin
