@@ -1,0 +1,41 @@
+KWin-Streaming
+==============
+Experimental KDE Wayland desktop setup for multi-GPU streaming workstations.
+
+Status: work in progress. The desktop is still being built. No runtime
+stability, OBS capture performance, or per-output GPU assignment is verified.
+Do not treat this repository as a ready-to-run installer.
+
+Upstream work
+-------------
+KWin: https://invent.kde.org/plasma/kwin
+Experimental change by Xaver Hugl:
+https://invent.kde.org/plasma/kwin/-/merge_requests/9668
+Branch: work/zamundaaa/composite-multi-gpu
+Pinned commit: 8893f7d19b046f0ea18f3d397410ab4047c67c85
+GitHub fork: https://github.com/Maiks-AI-Projects/kwin-streaming
+All upstream copyright and license notices remain applicable to KWin.
+
+Build approach
+--------------
+Use KDE Builder with a separate installation prefix and the existing user
+account. The distro Plasma session remains the fallback. Do not replace
+system graphics libraries or force a running desktop restart.
+The configuration is a build starting point, not a complete dependency installer.
+Supporting Plasma components use Plasma/6.7 for compatibility with Qt 6.10.
+Frameworks currently track latest-kf6, so they are not yet reproducibly pinned.
+Wayland 1.26.0 and wayland-protocols 1.49 are built in the separate prefix.
+KWin retains the experimental revision above; compatibility still needs testing.
+
+Planned verification
+--------------------
+Verify installed binaries, linked libraries and development login selection.
+Confirm normal Plasma remains selectable and accessible.
+Test per-output GPU assignment, desktop responsiveness and OBS recording.
+Start with DisplayLink outputs disabled for the initial controlled test.
+Record failures and limitations rather than claiming all visual hangs are fixed.
+
+Recovery
+--------
+A complete recovery procedure will be added after the actual login-session
+entry and launch environment have been installed and checked.

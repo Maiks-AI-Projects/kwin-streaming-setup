@@ -1,0 +1,27 @@
+config-version: 2
+global:
+  branch-group: latest-kf6
+  include-dependencies: true
+  source-dir: ~/kwin-streaming-build/src
+  build-dir: ~/kwin-streaming-build/build
+  install-dir: ~/kwin-streaming-build/usr
+  log-dir: ~/kwin-streaming-build/log
+  num-cores: "8"
+  num-cores-low-mem: "4"
+  cmake-generator: Ninja
+  cmake-options: -DCMAKE_BUILD_TYPE=RelWithDebInfo -DBUILD_TESTING=OFF
+  install-login-session: false
+  hold-performance-profile: false
+  stop-on-failure: true
+include ${build-configs-dir}/kde6.yaml: ""
+override workspace:
+  branch: Plasma/6.7
+override kwin:
+  branch: work/zamundaaa/composite-multi-gpu
+  revision: "8893f7d19b046f0ea18f3d397410ab4047c67c85"
+override wayland:
+  tag: '1.26.0'
+override wayland-protocols:
+  tag: '1.49'
+override aurorae:
+  branch: Plasma/6.7
